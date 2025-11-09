@@ -30,11 +30,12 @@ namespace QuadroApp.Model
         public Leverancier Leverancier { get; set; } = null!;
 
         [Required]
-        public int BreedteCm { get; set; }      // breedte in mm
+        public int BreedteCm { get; set; }
         public string Soort { get; set; } = string.Empty;
         public string? Serie { get; set; }
         public bool IsDealer { get; set; }
-        public string Beschrijving { get; set; } = string.Empty;
+
+        public string Opmerking { get; set; } = string.Empty;
 
         [Precision(10, 2)]
         public decimal PrijsPerMeter { get; set; }

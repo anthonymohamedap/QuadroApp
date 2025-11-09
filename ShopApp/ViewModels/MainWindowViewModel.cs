@@ -34,8 +34,9 @@ namespace QuadroApp.ViewModels
                 klantenVm.NavigatieGevraagd += NavigeerNaar;
 
 
-            if (_klantenView.DataContext is AfwerkingenViewModel AfwerkingVm)
-                AfwerkingVm.NavigatieGevraagd += NavigeerNaar;
+            if (_afwerkingenView.DataContext is AfwerkingenViewModel afwerkingenVm)
+                afwerkingenVm.NavigatieGevraagd += NavigeerNaar;
+
 
             if (_offerteView.DataContext is OfferteViewModel OfferteVm)
                 OfferteVm.NavigatieGevraagd += NavigeerNaar;

@@ -1,248 +1,276 @@
 <UserControl
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:viewmodels="clr-namespace:QuadroApp.ViewModels"
-    xmlns:m="clr-namespace:QuadroApp.Model"
-    xmlns:converters="clr-namespace:Avalonia.Data.Converters;assembly=Avalonia.Base"
+    xmlns:vm="using:QuadroApp.ViewModels"
+    xmlns:m="using:QuadroApp.Model"
     x:Class="QuadroApp.Views.AfwerkingenView"
-    x:DataType="viewmodels:AfwerkingenViewModel"
-    Padding="0"
-    Background="#1E1F23">
+    x:DataType="vm:AfwerkingenViewModel"
+    Background="#F5F5F5">
 
-    <UserControl.Styles>
-        <Style Selector="TextBlock.h1">
-            <Setter Property="FontSize" Value="22"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
-        </Style>
+	<Grid RowDefinitions="Auto,*,Auto">
+		<!-- ░░ HEADER (zelfde als KlantenView) ░░ -->
+		<Border Grid.ColumnSpan="2" Background="#444A50" Height="70">
+			<DockPanel LastChildFill="False" Margin="20,0">
+				<!-- Titel links -->
+				<StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center" Spacing="10">
+					<Ellipse Width="35" Height="35" Fill="#F5C242"/>
+					<TextBlock Text="QUADRO" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Center"/>
+					<TextBlock Text="LIJSTENBEHEER" Foreground="#CCC" FontSize="13" Margin="5,0,0,0" VerticalAlignment="Center"/>
+				</StackPanel>
+				<!-- Terugknop rechts -->
+				<Button Content="⬅️ Terug"
+						Command="{Binding GaTerugCommand}"
+						DockPanel.Dock="Right"
+						VerticalAlignment="Top"
+						HorizontalAlignment="Right"
+						Margin="0,10,10,0"
+						Background="#F5C242"
+						Foreground="#222"
+						FontWeight="Bold"
+						CornerRadius="8"
+						Padding="10,5"
+						Width="100"
+						Height="32"/>
+			</DockPanel>
+		</Border>
 
-        <Style Selector="TextBlock.section">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="#222222"/>
-            <Setter Property="Margin" Value="0,6,0,10"/>
-        </Style>
+		<!-- ░░ MAIN CONTENT ░░ -->
+		<ScrollViewer Grid.Row="1" Margin="0,10,0,10" VerticalScrollBarVisibility="Auto">
+			<StackPanel Margin="20" Spacing="15">
+				<TextBlock Text="🧩 Afwerkingen"
+						   FontSize="24"
+						   FontWeight="Bold"
+						   Foreground="#222"
+						   Margin="0,0,0,5"/>
 
-        <Style Selector="TextBlock.label">
-            <Setter Property="Foreground" Value="#555555"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Margin" Value="0,6,0,4"/>
-        </Style>
+				<!-- Toolbar (zelfde knoppen-stijl als KlantenView) -->
+				<StackPanel Orientation="Horizontal" Spacing="10" Margin="0,0,0,15">
+					<Button Content="🔄 Verversen"  Command="{Binding RefreshAsyncCommand}" Classes="MainBtn"/>
+					<Button Content="➕ Nieuw"       Command="{Binding NewAsyncCommand}"      Classes="MainBtn"/>
+					<Button Content="💾 Opslaan"     Command="{Binding SaveAsyncCommand}"     Classes="MainBtn"/>
+					<Button Content="🗑️ Verwijderen" Command="{Binding DeleteAsyncCommand}"   Classes="MainBtn"/>
+				</StackPanel>
 
-        <Style Selector="Border.card">
-            <Setter Property="CornerRadius" Value="12"/>
-            <Setter Property="Background" Value="#FFFFFF"/>
-            <Setter Property="BorderBrush" Value="#E5E7EB"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="16"/>
-        </Style>
+				<!-- Twee kolommen -->
+				<Grid ColumnDefinitions="360,*" ColumnSpacing="14">
+					<!-- ═══════════ LINKERKOLOM (filters + lijst) ═══════════ -->
+					<Border Classes="card" Background="White" BorderBrush="#E5E7EB" BorderThickness="1" CornerRadius="12" Padding="16">
+						<StackPanel Spacing="14">
 
-        <Style Selector="ListBoxItem">
-            <Setter Property="Margin" Value="0,2"/>
-            <Setter Property="CornerRadius" Value="8"/>
-            <Setter Property="Padding" Value="8"/>
-        </Style>
-        <Style Selector="ListBoxItem:pointerover">
-            <Setter Property="Background" Value="#E9EFFD"/>
-        </Style>
-        <Style Selector="ListBoxItem:checked">
-            <Setter Property="Background" Value="#D4E1FF"/>
-        </Style>
-    </UserControl.Styles>
+							<!-- Filters -->
+							<StackPanel Spacing="8">
+								<TextBlock Text="Groep" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+								<ComboBox ItemsSource="{Binding Groepen}" SelectedItem="{Binding SelectedGroep}" MinWidth="140">
+									<ComboBox.ItemTemplate>
+										<DataTemplate x:DataType="m:AfwerkingsGroep">
+											<TextBlock Text="{Binding Code} - {Binding Naam}"/>
+										</DataTemplate>
+									</ComboBox.ItemTemplate>
+								</ComboBox>
 
-    <UserControl.Resources>
-        <converters:BooleanNegationConverter x:Key="NotBool"/>
-    </UserControl.Resources>
+								<TextBlock Text="Zoek optie" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+								<TextBox Watermark="Zoek op code of naam…"
+										 Text="{Binding Zoekterm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										 Margin="0,0,0,2"/>
 
-    <Grid RowDefinitions="Auto,*">
-        <!-- Header -->
-        <Border Background="#2E3239" Padding="14,10" BorderBrush="#000000" BorderThickness="0,0,0,1">
-            <DockPanel>
-                <TextBlock Classes="h1" Text="Afwerkingen" DockPanel.Dock="Left"/>
-                <StackPanel Orientation="Horizontal" Spacing="8" DockPanel.Dock="Right">
-                    <Button Content="⬅️ Terug"
-                            Command="{Binding GaTerugCommand}"
-                            Background="#F5C242"
-                            Foreground="#222"
-                            FontWeight="Bold"
-                            CornerRadius="8"
-                            Padding="10,5"
-                            Width="110"
-                            Height="32"/>
-                    <Button Content="Verversen" Command="{Binding RefreshAsyncCommand}"/>
-                    <Button Content="Nieuw" Command="{Binding NewAsyncCommand}"/>
-                    <Button Content="Opslaan" Command="{Binding SaveAsyncCommand}"/>
-                    <Button Content="Verwijderen" Command="{Binding DeleteAsyncCommand}"/>
-                </StackPanel>
-            </DockPanel>
-        </Border>
+								<TextBlock Text="{Binding AantalOptiesText}" Foreground="#6B7280" FontStyle="Italic" FontSize="12"/>
+							</StackPanel>
 
-        <!-- Content -->
-        <Grid Grid.Row="1" ColumnDefinitions="360,*" Margin="16" ColumnSpacing="14">
-            <!-- Linkerkolom -->
-            <Border Classes="card">
-                <StackPanel Spacing="14">
-                    <!-- Filters -->
-                    <StackPanel Spacing="8">
-                        <TextBlock Classes="label" Text="Groep"/>
-                        <ComboBox ItemsSource="{Binding Groepen}" SelectedItem="{Binding SelectedGroep}">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate x:DataType="m:AfwerkingsGroep">
-                                    <TextBlock Text="{Binding Code} - {Binding Naam}"/>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
+							<!-- Lijst -->
+							<Border Background="#F7F7F9" CornerRadius="10" Padding="8" Margin="0,4,0,0">
+								<ListBox ItemsSource="{Binding FilteredOpties}"
+										 SelectedItem="{Binding SelectedOptie}"
+										 ScrollViewer.VerticalScrollBarVisibility="Auto"
+										 BorderThickness="0"
+										 Background="Transparent">
+									<!-- ListBoxItem styles -->
+									<ListBox.Styles>
+										<Style Selector="ListBoxItem">
+											<Setter Property="CornerRadius" Value="8"/>
+											<Setter Property="Margin" Value="0,4"/>
+											<Setter Property="Padding" Value="10"/>
+											<Setter Property="MinHeight" Value="44"/>
+											<Setter Property="Background" Value="#FFFFFF"/>
+											<Setter Property="BorderBrush" Value="#E5E7EB"/>
+											<Setter Property="BorderThickness" Value="1"/>
+											<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+										</Style>
+										<Style Selector="ListBoxItem:pointerover">
+											<Setter Property="Background" Value="#EEF2FF"/>
+											<Setter Property="BorderBrush" Value="#CBD5E1"/>
+										</Style>
+										<Style Selector="ListBoxItem:selected">
+											<Setter Property="Background" Value="#DBEAFE"/>
+											<Setter Property="BorderBrush" Value="#93C5FD"/>
+										</Style>
+									</ListBox.Styles>
 
-                        <TextBlock Classes="label" Text="Zoek optie"/>
-                        <TextBox Watermark="Zoek op code of naam…"
-                                 Text="{Binding Zoekterm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+									<!-- Item template -->
+									<ListBox.ItemTemplate>
+										<DataTemplate x:DataType="m:AfwerkingsOptie">
+											<Grid ColumnDefinitions="Auto,*,Auto"
+												  ColumnSpacing="12"
+												  VerticalAlignment="Center"
+												  HorizontalAlignment="Stretch">
+												<!-- Volgnummer badge -->
+												<Border Background="#E5E7EB" CornerRadius="6" Padding="6,3" VerticalAlignment="Center">
+													<TextBlock Text="{Binding Volgnummer}" FontWeight="SemiBold" Foreground="#111827"/>
+												</Border>
 
-                        <TextBlock Text="{Binding AantalOptiesText}" Foreground="#6B7280" FontStyle="Italic"/>
-                    </StackPanel>
+												<!-- Naam + groep -->
+												<StackPanel Grid.Column="1" Orientation="Vertical" Spacing="2">
+													<TextBlock Text="{Binding Naam}"
+															   FontWeight="SemiBold"
+															   Foreground="#111827"
+															   TextWrapping="NoWrap"
+															   TextTrimming="CharacterEllipsis"/>
+													<TextBlock Text="{Binding AfwerkingsGroep.Naam}"
+															   Foreground="#6B7280"
+															   FontSize="11"
+															   TextWrapping="NoWrap"
+															   TextTrimming="CharacterEllipsis"/>
+												</StackPanel>
 
-                    <!-- Lijst -->
-                    <Border Background="#F7F7F9" CornerRadius="10" Padding="6" Margin="0,4,0,0">
-                        <ListBox ItemsSource="{Binding FilteredOpties}"
-                                 SelectedItem="{Binding SelectedOptie}"
-                                 ScrollViewer.VerticalScrollBarVisibility="Auto">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate x:DataType="m:AfwerkingsOptie">
-                                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
-                                        <Border Background="#E5E7EB"
-                                                Foreground="#111827"
-                                                CornerRadius="6"
-                                                Padding="4,2"
-                                                VerticalAlignment="Center">
-                                            <TextBlock Text="{Binding Volgnummer}" FontWeight="SemiBold"/>
-                                        </Border>
-                                        <StackPanel Orientation="Vertical" Spacing="2">
-                                            <TextBlock Text="{Binding Naam}" FontWeight="SemiBold" Foreground="#111827"/>
-                                            <TextBlock Text="{Binding AfwerkingsGroep.Naam}" Foreground="#6B7280" FontSize="11"/>
-                                        </StackPanel>
-                                        <TextBlock Text="{Binding Leverancier.Code}" Foreground="#6B7280" VerticalAlignment="Center"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </Border>
+												<!-- Leverancier rechts -->
+												<Border Grid.Column="2" Background="#F3F4F6" CornerRadius="6" Padding="6,3" VerticalAlignment="Center">
+													<TextBlock Text="{Binding Leverancier.Code}" Foreground="#374151" FontSize="12" FontWeight="SemiBold"/>
+												</Border>
+											</Grid>
+										</DataTemplate>
+									</ListBox.ItemTemplate>
+								</ListBox>
+							</Border>
 
-                    <!-- Status & fout -->
-                    <TextBlock Text="{Binding Status}" Foreground="#4B5563"/>
-                    <TextBlock Text="{Binding Foutmelding}" Foreground="Red" FontWeight="Bold" TextWrapping="Wrap"/>
-                </StackPanel>
-            </Border>
+							<!-- Status & fout -->
+							<TextBlock Text="{Binding Status}" Foreground="#4B5563"/>
+							<TextBlock Text="{Binding Foutmelding}" Foreground="Red" FontWeight="Bold" TextWrapping="Wrap"/>
+						</StackPanel>
+					</Border>
 
-            <!-- Rechterkolom -->
-            <Border Grid.Column="1" Classes="card">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel Spacing="20">
-                        <StackPanel Spacing="8" IsVisible="{Binding HeeftSelectie, Converter={StaticResource NotBool}}">
-                            <TextBlock Text="Selecteer een afwerkingsoptie links om de details te bekijken." Foreground="#6B7280"/>
-                        </StackPanel>
+					<!-- ═══════════ RECHTERKOLOM (details) ═══════════ -->
+					<Border Grid.Column="1" Classes="card" Background="White" BorderBrush="#E5E7EB" BorderThickness="1" CornerRadius="12" Padding="16">
+						<ScrollViewer VerticalScrollBarVisibility="Auto">
+							<StackPanel Spacing="20">
+								<!-- Info als niets gekozen -->
+								<StackPanel Spacing="8" IsVisible="{Binding !HeeftSelectie}">
+									<TextBlock Text="Selecteer een afwerkingsoptie links om de details te bekijken." Foreground="#6B7280"/>
+								</StackPanel>
 
-                        <StackPanel Spacing="16" IsEnabled="{Binding HeeftSelectie}" IsVisible="{Binding HeeftSelectie}">
-                            <!-- Basis -->
-                            <StackPanel>
-                                <TextBlock Classes="section" Text="Basis"/>
-                                <Grid ColumnDefinitions="200,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="8" ColumnSpacing="10">
-                                    <TextBlock Grid.Row="0" Grid.Column="0" Classes="label" Text="Naam"/>
-                                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedOptie.Naam, Mode=TwoWay}"/>
+								<!-- Details -->
+								<StackPanel Spacing="16" IsEnabled="{Binding HeeftSelectie}" IsVisible="{Binding HeeftSelectie}">
+									<!-- Basis -->
+									<StackPanel>
+										<TextBlock Text="Basis" FontSize="18" FontWeight="SemiBold" Foreground="#222" Margin="0,6,0,10"/>
+										<Grid ColumnDefinitions="200,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="8" ColumnSpacing="10">
+											<TextBlock Grid.Row="0" Grid.Column="0" Text="Naam" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SelectedOptie.Naam, Mode=TwoWay}"/>
 
-                                    <TextBlock Grid.Row="1" Grid.Column="0" Classes="label" Text="Volgnummer"/>
-                                    <NumericUpDown Grid.Row="1" Grid.Column="1"
-                                                   Value="{Binding SelectedOptie.Volgnummer, Mode=TwoWay}"
-                                                   Minimum="1"
-                                                   Maximum="9999"
-                                                   Increment="1"
-                                                   FormatString="0"/>
+											<TextBlock Grid.Row="1" Grid.Column="0" Text="Volgnummer" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<NumericUpDown Grid.Row="1" Grid.Column="1"
+														   Value="{Binding SelectedOptie.Volgnummer, Mode=TwoWay}"
+														   Minimum="1" Maximum="9999" Increment="1" FormatString="0"/>
 
-                                    <TextBlock Grid.Row="2" Grid.Column="0" Classes="label" Text="Leverancier"/>
-                                    <ComboBox Grid.Row="2" Grid.Column="1"
-                                              ItemsSource="{Binding Leveranciers}"
-                                              SelectedItem="{Binding SelectedLeverancier}">
-                                        <ComboBox.ItemTemplate>
-                                            <DataTemplate x:DataType="m:Leverancier">
-                                                <TextBlock Text="{Binding Code} — {Binding Naam}"/>
-                                            </DataTemplate>
-                                        </ComboBox.ItemTemplate>
-                                    </ComboBox>
+											<TextBlock Grid.Row="2" Grid.Column="0" Text="Leverancier" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<ComboBox Grid.Row="2" Grid.Column="1"
+													  ItemsSource="{Binding Leveranciers}"
+													  SelectedItem="{Binding SelectedLeverancier}">
+												<ComboBox.ItemTemplate>
+													<DataTemplate x:DataType="m:Leverancier">
+														<TextBlock Text="{Binding Code} — {Binding Naam}"/>
+													</DataTemplate>
+												</ComboBox.ItemTemplate>
+											</ComboBox>
 
-                                    <TextBlock Grid.Row="3" Grid.Column="0" Classes="label" Text="Dealeroptie"/>
-                                    <ToggleSwitch Grid.Row="3" Grid.Column="1" IsChecked="{Binding IsDealerOptie}" IsEnabled="False"/>
-                                </Grid>
-                            </StackPanel>
+											<TextBlock Grid.Row="3" Grid.Column="0" Text="Dealeroptie" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<ToggleSwitch Grid.Row="3" Grid.Column="1" IsChecked="{Binding IsDealerOptie}" IsEnabled="False"/>
+										</Grid>
+									</StackPanel>
 
-                            <Separator/>
+									<Separator/>
 
-                            <!-- Prijs & werk -->
-                            <StackPanel>
-                                <TextBlock Classes="section" Text="Prijs &amp; werk"/>
-                                <Grid ColumnDefinitions="200,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="8" ColumnSpacing="10">
-                                    <TextBlock Grid.Row="0" Grid.Column="0" Classes="label" Text="Kostprijs per m² (€)"/>
-                                    <NumericUpDown Grid.Row="0" Grid.Column="1"
-                                                   Value="{Binding SelectedOptie.KostprijsPerM2, Mode=TwoWay}"
-                                                   Increment="0.5"
-                                                   FormatString="0.00"/>
+									<!-- Prijs & werk -->
+									<StackPanel>
+										<TextBlock Text="Prijs &amp; werk" FontSize="18" FontWeight="SemiBold" Foreground="#222" Margin="0,6,0,10"/>
+										<Grid ColumnDefinitions="200,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="8" ColumnSpacing="10">
+											<TextBlock Grid.Row="0" Grid.Column="0" Text="Kostprijs per m² (€)" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<NumericUpDown Grid.Row="0" Grid.Column="1"
+														   Value="{Binding SelectedOptie.KostprijsPerM2, Mode=TwoWay}"
+														   Increment="0.5" FormatString="0.00"/>
 
-                                    <TextBlock Grid.Row="1" Grid.Column="0" Classes="label" Text="Winstmarge (factor)"/>
-                                    <NumericUpDown Grid.Row="1" Grid.Column="1"
-                                                   Value="{Binding SelectedOptie.WinstMarge, Mode=TwoWay}"
-                                                   Increment="0.05"
-                                                   FormatString="0.000"/>
+											<TextBlock Grid.Row="1" Grid.Column="0" Text="Winstmarge (factor)" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<NumericUpDown Grid.Row="1" Grid.Column="1"
+														   Value="{Binding SelectedOptie.WinstMarge, Mode=TwoWay}"
+														   Increment="0.05" FormatString="0.000"/>
 
-                                    <TextBlock Grid.Row="2" Grid.Column="0" Classes="label" Text="Afval (%)"/>
-                                    <NumericUpDown Grid.Row="2" Grid.Column="1"
-                                                   Value="{Binding SelectedOptie.AfvalPercentage, Mode=TwoWay}"
-                                                   Increment="0.5"
-                                                   FormatString="0.00"/>
+											<TextBlock Grid.Row="2" Grid.Column="0" Text="Afval (%)" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<NumericUpDown Grid.Row="2" Grid.Column="1"
+														   Value="{Binding SelectedOptie.AfvalPercentage, Mode=TwoWay}"
+														   Increment="0.5" FormatString="0.00"/>
 
-                                    <TextBlock Grid.Row="3" Grid.Column="0" Classes="label" Text="Vaste kost (€)"/>
-                                    <NumericUpDown Grid.Row="3" Grid.Column="1"
-                                                   Value="{Binding SelectedOptie.VasteKost, Mode=TwoWay}"
-                                                   Increment="0.5"
-                                                   FormatString="0.00"/>
+											<TextBlock Grid.Row="3" Grid.Column="0" Text="Vaste kost (€)" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<NumericUpDown Grid.Row="3" Grid.Column="1"
+														   Value="{Binding SelectedOptie.VasteKost, Mode=TwoWay}"
+														   Increment="0.5" FormatString="0.00"/>
 
-                                    <TextBlock Grid.Row="4" Grid.Column="0" Classes="label" Text="Werkminuten"/>
-                                    <NumericUpDown Grid.Row="4" Grid.Column="1"
-                                                   Value="{Binding SelectedOptie.WerkMinuten, Mode=TwoWay}"
-                                                   Increment="5"
-                                                   Minimum="0"
-                                                   Maximum="1440"/>
-                                </Grid>
-                            </StackPanel>
+											<TextBlock Grid.Row="4" Grid.Column="0" Text="Werkminuten" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<NumericUpDown Grid.Row="4" Grid.Column="1"
+														   Value="{Binding SelectedOptie.WerkMinuten, Mode=TwoWay}"
+														   Increment="5" Minimum="0" Maximum="1440"/>
+										</Grid>
+									</StackPanel>
 
-                            <Separator/>
+									<Separator/>
 
-                            <!-- Preview -->
-                            <StackPanel>
-                                <TextBlock Classes="section" Text="Prijsberekening (preview)"/>
-                                <Grid ColumnDefinitions="200,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="8" ColumnSpacing="10">
-                                    <TextBlock Grid.Row="0" Grid.Column="0" Classes="label" Text="Breedte (cm)"/>
-                                    <NumericUpDown Grid.Row="0" Grid.Column="1"
-                                                   Value="{Binding PreviewBreedteCm, Mode=TwoWay}"
-                                                   Minimum="1"
-                                                   Maximum="300"
-                                                   Increment="1"
-                                                   FormatString="0"/>
+									<!-- Preview -->
+									<StackPanel>
+										<TextBlock Text="Prijsberekening (preview)" FontSize="18" FontWeight="SemiBold" Foreground="#222" Margin="0,6,0,10"/>
+										<Grid ColumnDefinitions="200,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="8" ColumnSpacing="10">
+											<TextBlock Grid.Row="0" Grid.Column="0" Text="Breedte (cm)" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<NumericUpDown Grid.Row="0" Grid.Column="1"
+														   Value="{Binding PreviewBreedteCm, Mode=TwoWay}"
+														   Minimum="1" Maximum="300" Increment="1" FormatString="0"/>
 
-                                    <TextBlock Grid.Row="1" Grid.Column="0" Classes="label" Text="Hoogte (cm)"/>
-                                    <NumericUpDown Grid.Row="1" Grid.Column="1"
-                                                   Value="{Binding PreviewHoogteCm, Mode=TwoWay}"
-                                                   Minimum="1"
-                                                   Maximum="300"
-                                                   Increment="1"
-                                                   FormatString="0"/>
+											<TextBlock Grid.Row="1" Grid.Column="0" Text="Hoogte (cm)" Foreground="#555" FontSize="12" Margin="0,6,0,4"/>
+											<NumericUpDown Grid.Row="1" Grid.Column="1"
+														   Value="{Binding PreviewHoogteCm, Mode=TwoWay}"
+														   Minimum="1" Maximum="300" Increment="1" FormatString="0"/>
 
-                                    <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
-                                               FontWeight="SemiBold"
-                                               Foreground="#0A7C3E"
-                                               Text="{Binding PreviewPrijsText}"/>
-                                </Grid>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                </ScrollViewer>
-            </Border>
-        </Grid>
-    </Grid>
+											<TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+													   FontWeight="SemiBold"
+													   Foreground="#0A7C3E"
+													   Text="{Binding PreviewPrijsText}"/>
+										</Grid>
+									</StackPanel>
+								</StackPanel>
+							</StackPanel>
+						</ScrollViewer>
+					</Border>
+				</Grid>
+			</StackPanel>
+		</ScrollViewer>
+
+		<!-- ░░ FOOTER (optioneel tellertje) ░░ -->
+		<Border Grid.Row="2" Background="#F5F5F5" Padding="10">
+			<TextBlock Text="{Binding FilteredOpties.Count, StringFormat='Aantal opties: {0}'}"
+					   HorizontalAlignment="Center"
+					   Foreground="#666"/>
+		</Border>
+	</Grid>
+
+	<!-- ░░ STIJLEN (zelfde knop-stijl als KlantenView) ░░ -->
+	<UserControl.Styles>
+		<Style Selector="Button.MainBtn">
+			<Setter Property="Background" Value="#444A50"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="CornerRadius" Value="8"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="FontSize" Value="15"/>
+			<Setter Property="Padding" Value="10,5"/>
+		</Style>
+		<Style Selector="Button.MainBtn:pointerover">
+			<Setter Property="Background" Value="#F5C242"/>
+			<Setter Property="Foreground" Value="#222"/>
+		</Style>
+	</UserControl.Styles>
 </UserControl>

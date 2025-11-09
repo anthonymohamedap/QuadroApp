@@ -13,8 +13,8 @@ namespace QuadroApp.Views
         {
             InitializeComponent();
             var factory = ((App)Application.Current!).Services.GetRequiredService<IDbContextFactory<AppDbContext>>();
-
             DataContext = new AfwerkingenViewModel(factory);
         }
+
     }
 }

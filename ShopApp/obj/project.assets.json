@@ -6559,11 +6559,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\QuadroApp.csproj",
+      "projectUniqueName": "C:\\Users\\anthony mohamed\\Documents\\werk\\QuadroApp\\ShopApp\\QuadroApp.csproj",
       "projectName": "QuadroApp",
-      "projectPath": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\QuadroApp.csproj",
+      "projectPath": "C:\\Users\\anthony mohamed\\Documents\\werk\\QuadroApp\\ShopApp\\QuadroApp.csproj",
       "packagesPath": "C:\\Users\\anthony mohamed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\obj\\",
+      "outputPath": "C:\\Users\\anthony mohamed\\Documents\\werk\\QuadroApp\\ShopApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

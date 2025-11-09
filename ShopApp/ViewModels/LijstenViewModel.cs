@@ -91,21 +91,12 @@ namespace QuadroApp.ViewModels
 
                 using var db = _contextFactory.CreateDbContext();
 
-                // 🔎 LOG: waar zit mijn DB?
-                var cs = db.Database.GetDbConnection().ConnectionString;
-                Console.WriteLine($"[DB] ConnectionString: {cs}");
-                try
-                {
-                    var dataSource = db.Database.GetDbConnection().DataSource;
-                    Console.WriteLine($"[DB] DataSource path: {dataSource}");
-                }
-                catch { /* sommige providers */ }
-
-                // (optioneel) forceer aanmaak – handig bij lege/nieuwe DB
-                // await db.Database.EnsureCreatedAsync();
-
                 // ✅ Haal leveranciers op
-                Leveranciers = await db.Leveranciers.AsNoTracking().OrderBy(l => l.Naam).ToListAsync();
+                Leveranciers = await db.Leveranciers
+                    .AsNoTracking()
+                    .OrderBy(l => l.Naam)
+                    .ToListAsync();
+
                 Console.WriteLine($"[DB] Leveranciers: {Leveranciers.Count}");
 
                 // ✅ Haal lijsten op
@@ -117,8 +108,15 @@ namespace QuadroApp.ViewModels
 
                 Console.WriteLine($"[DB] Gevonden lijsten: {lijstenData.Count}");
 
+                // ✅ Wijs de lijst van leveranciers toe én herstel de juiste leverancier
                 foreach (var lijst in lijstenData)
+                {
                     lijst.AlleLeveranciers = Leveranciers;
+
+                    // herstel correcte Leverancier-referentie (zelfde Id)
+                    if (lijst.LeverancierId is int id)
+                        lijst.Leverancier = Leveranciers.FirstOrDefault(l => l.Id == id);
+                }
 
                 Lijsten = new ObservableCollection<TypeLijst>(lijstenData);
                 FilteredLijsten = new ObservableCollection<TypeLijst>(Lijsten);
@@ -127,7 +125,6 @@ namespace QuadroApp.ViewModels
             }
             catch (Exception ex)
             {
-                // ✔ log de échte fout naar de console
                 Console.WriteLine($"[DB] FOUT bij laden lijsten: {ex}");
                 Foutmelding = $"❌ Fout bij laden lijsten: {ex.Message}";
             }
@@ -151,7 +148,7 @@ namespace QuadroApp.ViewModels
                 var term = Zoekterm.Trim().ToLowerInvariant();
                 var filtered = Lijsten.Where(l =>
                     (l.Artikelnummer ?? "").ToLowerInvariant().Contains(term) ||
-                    (l.Beschrijving ?? "").ToLowerInvariant().Contains(term) ||
+                    (l.Opmerking ?? "").ToLowerInvariant().Contains(term) ||
                     (l.LeverancierCode ?? "").ToLowerInvariant().Contains(term) ||
                     (l.Soort ?? "").ToLowerInvariant().Contains(term));
 

@@ -16,7 +16,6 @@ namespace QuadroApp.ViewModels
     public partial class AfwerkingenViewModel : ObservableObject
     {
         private readonly IDbContextFactory<AppDbContext> _factory;
-        public event Action<string>? NavigatieGevraagd;
 
         // ─────────────────────────────────────────────────────────────
         // State
@@ -54,10 +53,9 @@ namespace QuadroApp.ViewModels
         [ObservableProperty] private decimal previewBreedteCm = 30;
         [ObservableProperty] private decimal previewHoogteCm = 40;
 
-        public string AantalOptiesText => $"{FilteredOpties.Count} opties";
-
         [ObservableProperty] private bool isDealerOptie;
 
+        public string AantalOptiesText => $"{FilteredOpties.Count} opties";
         public bool HeeftSelectie => SelectedOptie is not null;
 
         // ─────────────────────────────────────────────────────────────
@@ -67,13 +65,15 @@ namespace QuadroApp.ViewModels
         public IAsyncRelayCommand SaveAsyncCommand { get; }
         public IAsyncRelayCommand NewAsyncCommand { get; }
         public IAsyncRelayCommand DeleteAsyncCommand { get; }
+        public IRelayCommand GaTerugCommand { get; }
 
+        public event Action<string>? NavigatieGevraagd;
 
         // ─────────────────────────────────────────────────────────────
         // Ctors
         // ─────────────────────────────────────────────────────────────
         /// <summary>
-        /// Ontwerp-/no-arg ctor: probeert factory uit DI te halen (zoals LijstenView doet).
+        /// Ontwerp-/no-arg ctor: haalt factory uit DI (zelfde patroon als LijstenView).
         /// </summary>
         public AfwerkingenViewModel() : this(
             ((App)Application.Current!).Services.GetRequiredService<IDbContextFactory<AppDbContext>>()
@@ -88,15 +88,12 @@ namespace QuadroApp.ViewModels
             SaveAsyncCommand = new AsyncRelayCommand(SaveAsync);
             NewAsyncCommand = new AsyncRelayCommand(NewAsync);
             DeleteAsyncCommand = new AsyncRelayCommand(DeleteAsync, CanDelete);
+            GaTerugCommand = new RelayCommand(GaTerug);
 
             _ = LoadAsync();
         }
 
-        [RelayCommand]
-        private void GaTerug()
-        {
-            NavigatieGevraagd?.Invoke("Home");
-        }
+        private void GaTerug() => NavigatieGevraagd?.Invoke("Home");
 
         // ─────────────────────────────────────────────────────────────
         // Data access (altijd nieuwe DbContext per actie)
@@ -144,10 +141,12 @@ namespace QuadroApp.ViewModels
                     .Include(o => o.Leverancier)
                     .Include(o => o.AfwerkingsGroep);
 
-                if (SelectedGroep != null)
-                    query = query.Where(o => o.AfwerkingsGroepId == SelectedGroep.Id);
+                IQueryable<AfwerkingsOptie> filteredQuery = query;
 
-                var opties = await query
+                if (SelectedGroep != null)
+                    filteredQuery = filteredQuery.Where(o => o.AfwerkingsGroepId == SelectedGroep.Id);
+
+                var opties = await filteredQuery
                     .OrderBy(o => o.Volgnummer)
                     .ThenBy(o => o.Naam)
                     .ToListAsync();
@@ -173,6 +172,7 @@ namespace QuadroApp.ViewModels
                     o.Volgnummer.ToString().Contains(t, StringComparison.OrdinalIgnoreCase) ||
                     (o.Naam ?? string.Empty).Contains(t, StringComparison.OrdinalIgnoreCase));
             }
+
             FilteredOpties = new ObservableCollection<AfwerkingsOptie>(src);
             OnPropertyChanged(nameof(AantalOptiesText));
 
@@ -182,6 +182,7 @@ namespace QuadroApp.ViewModels
 
             SelectedOptie = nieuweSelectie;
         }
+
         private void SyncSelectedOptieBindings()
         {
             isSynchronizing = true;
@@ -194,10 +195,10 @@ namespace QuadroApp.ViewModels
                     return;
                 }
 
-                // Controleer of dit een dealeroptie is (DLR)
+                // Dealeroptie? (DLR)
                 IsDealerOptie = string.Equals(selectedOptie.Leverancier?.Code, "DLR", StringComparison.OrdinalIgnoreCase);
 
-                // Stel de geselecteerde leverancier in
+                // Geselecteerde leverancier syncen
                 SelectedLeverancier = selectedOptie.LeverancierId.HasValue
                     ? Leveranciers.FirstOrDefault(l => l.Id == selectedOptie.LeverancierId.Value)
                     : null;
@@ -207,7 +208,6 @@ namespace QuadroApp.ViewModels
                 isSynchronizing = false;
             }
         }
-
 
         public string PreviewPrijsText
         {
@@ -225,7 +225,7 @@ namespace QuadroApp.ViewModels
         }
 
         // ─────────────────────────────────────────────────────────────
-        // Commands
+        // Commands (implementaties)
         // ─────────────────────────────────────────────────────────────
         private async Task RefreshAsync() => await LoadAsync();
 
@@ -238,11 +238,11 @@ namespace QuadroApp.ViewModels
                 if (selectedOptie != null)
                 {
                     using var db = _factory.CreateDbContext();
+
                     selectedOptie.LeverancierId = SelectedLeverancier?.Id;
                     if (SelectedLeverancier is not null)
-                    {
                         selectedOptie.Leverancier = SelectedLeverancier;
-                    }
+
                     db.Update(selectedOptie);
                     await db.SaveChangesAsync();
                 }
@@ -302,6 +302,9 @@ namespace QuadroApp.ViewModels
             HasChanges = true;
         }
 
+        // ─────────────────────────────────────────────────────────────
+        // Partial property-hooks
+        // ─────────────────────────────────────────────────────────────
         partial void OnZoektermChanged(string? value) => ApplyFilter();
 
         partial void OnSelectedGroepChanged(AfwerkingsGroep? value)
@@ -310,7 +313,6 @@ namespace QuadroApp.ViewModels
         }
 
         partial void OnPreviewBreedteCmChanged(decimal value) => OnPropertyChanged(nameof(PreviewPrijsText));
-
         partial void OnPreviewHoogteCmChanged(decimal value) => OnPropertyChanged(nameof(PreviewPrijsText));
 
         partial void OnSelectedLeverancierChanged(Leverancier? value)

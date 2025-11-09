@@ -13,6 +13,7 @@ namespace QuadroApp.Model
         public string? Nummer { get; set; }
         public string? Postcode { get; set; }
         public string? Gemeente { get; set; }
+        public string? BtwNummer { get; set; }
         public string? Opmerking { get; set; }
 
 

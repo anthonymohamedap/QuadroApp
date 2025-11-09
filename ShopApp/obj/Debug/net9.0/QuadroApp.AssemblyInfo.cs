@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuadroApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10900e4d2eca7ddd0133b61f71462aa373deafe2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eea11b336322509ee6c071dd028f0e51d435529d")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuadroApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuadroApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

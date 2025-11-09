@@ -55,5 +55,23 @@
 		<Setter Property="BorderThickness" Value="1"/>
 		<Setter Property="Padding" Value="15"/>
 	</Style>
+	<Style Selector="Button.IconBtn">
+		<Setter Property="Width" Value="40"/>
+		<Setter Property="Height" Value="40"/>
+		<Setter Property="FontSize" Value="18"/>
+		<Setter Property="CornerRadius" Value="6"/>
+		<Setter Property="Background" Value="#444A50"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="FontWeight" Value="Bold"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="Margin" Value="4"/>
+	</Style>
+
+	<Style Selector="Button.IconBtn:pointerover">
+		<Setter Property="Background" Value="#F5C242"/>
+		<Setter Property="Foreground" Value="#222"/>
+	</Style>
 
 </Styles>
