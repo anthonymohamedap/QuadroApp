@@ -1,0 +1,77 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+using QuadroApp.Data;
+using QuadroApp.Model;
+using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace QuadroApp.ViewModels
+{
+    public class KlantenViewModel : ViewModelBase
+    {
+        private readonly AppDbContext _db;
+
+        // ObservableCollection zodat de UI automatisch bijwerkt
+        public ObservableCollection<Klant> Klanten { get; private set; } = new();
+
+        private bool _isLoading;
+        public bool IsLoading
+        {
+            get => _isLoading;
+            set => SetProperty(ref _isLoading, value);
+        }
+
+        private string? _foutmelding;
+        public string? Foutmelding
+        {
+            get => _foutmelding;
+            set => SetProperty(ref _foutmelding, value);
+        }
+
+        // Constructor (AppDbContext wordt via DI of manueel meegegeven)
+        public KlantenViewModel(AppDbContext db)
+        {
+            _db = db ?? throw new ArgumentNullException(nameof(db));
+            _ = LaadKlantenAsync();
+        }
+
+        // Asynchrone versie zodat UI niet blokkeert
+        private async Task LaadKlantenAsync()
+        {
+            try
+            {
+                IsLoading = true;
+                Foutmelding = null;
+
+                // Controleer of de tabel bestaat (handig bij nieuwe database)
+                if (!_db.Database.CanConnect())
+                {
+                    Foutmelding = "Kan geen verbinding maken met de database.";
+                    return;
+                }
+
+                var lijst = await _db.Klanten.AsNoTracking().ToListAsync();
+
+                Klanten.Clear();
+                foreach (var klant in lijst)
+                    Klanten.Add(klant);
+            }
+            catch (Exception ex)
+            {
+                Foutmelding = $"Fout bij het laden van klanten: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+
+        // Handige methode om data te vernieuwen vanuit de UI
+        public async Task VernieuwAsync()
+        {
+            await LaadKlantenAsync();
+        }
+    }
+}

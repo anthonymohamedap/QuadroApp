@@ -1,0 +1,99 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:QuadroApp.ViewModels"
+             x:Class="QuadroApp.Views.HomeView"
+             x:DataType="vm:HomeViewModel"
+             Background="#FFFFFF">
+
+	<Grid RowDefinitions="Auto,*,Auto">
+
+		<!-- ░░ HEADER ░░ -->
+		<Border Background="#444A50" Height="70">
+			<DockPanel LastChildFill="False" Margin="20,0">
+				<!-- Logo -->
+				<StackPanel DockPanel.Dock="Left"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Spacing="10">
+					<Ellipse Width="35" Height="35" Fill="#F5C242"/>
+					<TextBlock Text="QUADRO"
+                               Foreground="White"
+                               FontWeight="Bold"
+                               FontSize="20"
+                               VerticalAlignment="Center" />
+					<TextBlock Text="INLIJSTATELIER"
+                               Foreground="#CCC"
+                               FontSize="13"
+                               Margin="5,0,0,0"
+                               VerticalAlignment="Center" />
+				</StackPanel>
+			</DockPanel>
+		</Border>
+
+		<!-- ░░ MAIN CONTENT ░░ -->
+		<Grid Grid.Row="1">
+			<StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Spacing="25">
+				<TextBlock Text="Welkom bij Quadro Inlijstatelier"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="#222"
+                           HorizontalAlignment="Center" />
+				<TextBlock Text="Selecteer een onderdeel om te starten"
+                           Foreground="#555"
+                           FontSize="16"
+                           HorizontalAlignment="Center" />
+
+				<StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Spacing="20"
+                            Margin="0,20,0,0">
+					<Button Width="150" Height="50"
+                            Content="👥 Klanten"
+                            Command="{Binding OpenKlantenCommand}"
+                            Classes="MainBtn"/>
+					<Button Width="150" Height="50"
+ Content="👥 Afwerkingen"
+ Command="{Binding OpenAfwerkingsOptiesCommand}"
+ Classes="MainBtn"/>
+
+					<Button Width="150" Height="50"
+                            Content="🪟 Lijsten"
+                            Command="{Binding OpenLijstenCommand}"
+                            Classes="MainBtn"/>
+
+					<Button Width="150" Height="50"
+                            Content="📄 Offertes"
+                            Command="{Binding OpenOffertesCommand}"
+                            Classes="MainBtn"/>
+				</StackPanel>
+			</StackPanel>
+		</Grid>
+
+		<!-- ░░ FOOTER ░░ -->
+		<Border Grid.Row="2" Background="#F5F5F5" Padding="15">
+			<TextBlock Text="© 2025 QuadroApp – Ontwikkeld door Anthony Mohamed"
+                       HorizontalAlignment="Center"
+                       Foreground="#666"/>
+		</Border>
+	</Grid>
+
+	<!-- ░░ BUTTON STYLES ░░ -->
+	<UserControl.Styles>
+		<Style Selector="Button.MainBtn">
+			<Setter Property="Background" Value="#444A50"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="CornerRadius" Value="8"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="FontSize" Value="15"/>
+			<Setter Property="Padding" Value="10,5"/>
+		</Style>
+
+		<Style Selector="Button.MainBtn:pointerover">
+			<Setter Property="Background" Value="#F5C242"/>
+			<Setter Property="Foreground" Value="#222"/>
+		</Style>
+	</UserControl.Styles>
+</UserControl>

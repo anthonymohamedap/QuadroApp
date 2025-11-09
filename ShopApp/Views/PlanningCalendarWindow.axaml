@@ -1,0 +1,132 @@
+<Window
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="clr-namespace:QuadroApp.ViewModels"
+  x:Class="QuadroApp.Views.PlanningCalendarWindow"
+  x:DataType="vm:PlanningCalendarViewModel"
+	Width="1080" Height="720"
+	Title="Werkbezetting — kalender"
+	WindowStartupLocation="CenterOwner">
+
+	<Window.DataContext>
+		<vm:PlanningCalendarViewModel/>
+	</Window.DataContext>
+
+	<!-- GEEN Padding op Grid -->
+	<Grid ColumnDefinitions="260,*,360" RowDefinitions="Auto,*" ColumnSpacing="12" RowSpacing="8" Margin="12">
+
+		<!-- Header -->
+		<Grid Grid.ColumnSpan="3" ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="8">
+			<TextBlock Text="{Binding Title}" FontSize="18" FontWeight="SemiBold"/>
+			<StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="6">
+				<Button Content="⟵" Command="{Binding PrevMonthCommand}" ToolTip.Tip="Vorige maand"/>
+				<TextBlock Text="{Binding MonthTitle}" VerticalAlignment="Center" FontWeight="SemiBold"/>
+				<Button Content="⟶" Command="{Binding NextMonthCommand}" ToolTip.Tip="Volgende maand"/>
+			</StackPanel>
+			<Button Grid.Column="3" Content="Vandaag" Command="{Binding TodayCommand}"/>
+		</Grid>
+
+		<!-- Links: week-samenvattingen -->
+		<Border Grid.Row="1" Grid.Column="0" BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="10">
+			<ItemsControl ItemsSource="{Binding WeekSummaries}">
+				<ItemsControl.ItemTemplate>
+					<!-- x:DataType toegevoegd -->
+					<DataTemplate x:DataType="vm:WeekSummary">
+						<Grid ColumnDefinitions="6,*,Auto" Margin="0,4" ColumnSpacing="8">
+							<Border Grid.Column="0" Width="6" Background="{Binding Color}" CornerRadius="3"/>
+							<StackPanel Grid.Column="1" Spacing="2">
+								<TextBlock Text="{Binding Title}" FontWeight="SemiBold"/>
+								<TextBlock Text="{Binding Range}" Opacity="0.7"/>
+							</StackPanel>
+							<TextBlock Grid.Column="2" Text="{Binding TotalLabel}" VerticalAlignment="Center"/>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</Border>
+
+		<!-- Midden: maandraster -->
+		<Border Grid.Row="1" Grid.Column="1" BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="10">
+			<Grid RowDefinitions="Auto,*" RowSpacing="8">
+				<Grid ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="4">
+					<TextBlock Text="ma" HorizontalAlignment="Center"/>
+					<TextBlock Text="di" Grid.Column="1" HorizontalAlignment="Center"/>
+					<TextBlock Text="wo" Grid.Column="2" HorizontalAlignment="Center"/>
+					<TextBlock Text="do" Grid.Column="3" HorizontalAlignment="Center"/>
+					<TextBlock Text="vr" Grid.Column="4" HorizontalAlignment="Center"/>
+					<TextBlock Text="za" Grid.Column="5" HorizontalAlignment="Center"/>
+					<TextBlock Text="zo" Grid.Column="6" HorizontalAlignment="Center"/>
+				</Grid>
+
+				<ItemsControl Grid.Row="1" ItemsSource="{Binding MonthDays}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<UniformGrid Columns="7"/>
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+
+					<ItemsControl.ItemTemplate>
+						<!-- x:DataType toegevoegd -->
+						<DataTemplate x:DataType="vm:DayTile">
+							<!-- Gebruik een Button als klik-tegel (geen EventSetter nodig) -->
+							<Button Command="{Binding $parent[vm:PlanningCalendarViewModel].SelectDateCommand}"
+									CommandParameter="{Binding Date}"
+									Padding="0" BorderThickness="0" Background="Transparent">
+								<Border Margin="2" Padding="6" CornerRadius="6"
+										BorderBrush="{Binding Border}" BorderThickness="1"
+										Background="{Binding Background}">
+									<Grid RowDefinitions="Auto,Auto,*" RowSpacing="4">
+										<StackPanel Orientation="Horizontal" Spacing="6">
+											<TextBlock Text="{Binding DayNumber}" FontWeight="SemiBold"/>
+											<TextBlock Text="{Binding BusyLabel}" Opacity="0.8"/>
+										</StackPanel>
+
+										<Border Height="6" CornerRadius="3" Background="#222">
+											<Border Width="{Binding BusyBarWidth}"
+													Background="{Binding BusyColor}"
+													CornerRadius="3" HorizontalAlignment="Left"/>
+										</Border>
+
+										<ItemsControl Grid.Row="2" ItemsSource="{Binding TopItems}">
+											<ItemsControl.ItemTemplate>
+												<DataTemplate x:DataType="x:String">
+													<TextBlock Text="{Binding}"/>
+												</DataTemplate>
+											</ItemsControl.ItemTemplate>
+										</ItemsControl>
+									</Grid>
+								</Border>
+							</Button>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</Grid>
+		</Border>
+
+		<!-- Rechts: dagagenda -->
+		<Border Grid.Row="1" Grid.Column="2" BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="10">
+			<Grid RowDefinitions="Auto,*" RowSpacing="8">
+				<StackPanel Orientation="Horizontal" Spacing="8">
+					<TextBlock Text="{Binding AgendaHeader}" FontWeight="SemiBold"/>
+					<Button Content="Plan taak op selectie" Command="{Binding ConfirmSelectionCommand}"/>
+				</StackPanel>
+
+				<!-- ItemsSource i.p.v. Items -->
+				<DataGrid Grid.Row="1"
+					  ItemsSource="{Binding AgendaItems}"
+					  IsReadOnly="True"
+					  x:CompileBindings="False">
+					<!-- ✅ opt-out -->
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="van" Binding="{Binding From, StringFormat=HH\:mm}" Width="70"/>
+						<DataGridTextColumn Header="tot" Binding="{Binding To,   StringFormat=HH\:mm}" Width="70"/>
+						<DataGridTextColumn Header="duur" Binding="{Binding DurLabel}" Width="70"/>
+						<DataGridTextColumn Header="bon"  Binding="{Binding WerkBonId}" Width="80"/>
+						<DataGridTextColumn Header="omschrijving" Binding="{Binding Title}" Width="*"/>
+					</DataGrid.Columns>
+				</DataGrid>
+
+			</Grid>
+		</Border>
+	</Grid>
+</Window>

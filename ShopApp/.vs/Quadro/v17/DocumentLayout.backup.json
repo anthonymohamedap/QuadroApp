@@ -1,0 +1,838 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\offerteview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\offerteview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\viewmodels\\offerteviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:viewmodels\\offerteviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\offerteview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\offerteview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\service\\prijsbereking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:service\\prijsbereking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\viewmodels\\planningcalendarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:viewmodels\\planningcalendarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\planningcalendarwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\planningcalendarwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\afwerkingenview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\afwerkingenview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\klantenview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\klantenview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\klantdialog.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\klantdialog.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\klantenview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\klantenview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\homeview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\homeview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\homeview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\homeview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\mainwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:mainwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\viewmodels\\afwerkingenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:viewmodels\\afwerkingenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\viewmodels\\klantenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:viewmodels\\klantenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\planningcalendarwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\planningcalendarwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\app.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:app.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\styles\\quadrotheme.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:styles\\quadrotheme.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\data\\appdbcontext.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:data\\appdbcontext.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\werktaak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\werktaak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\werkbon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\werkbon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anthony mohamed\\AppData\\Local\\Temp\\.vsdbgsrc\\51c6b6835b98f43df297d5ad5b6ea6d7c64b592f\\QuadroApp.Views.OfferteView.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\klant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\klant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\appdbcontext.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:appdbcontext.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\offerte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\offerte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\offerteregel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\offerteregel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\service\\legacyafwerkingcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:service\\legacyafwerkingcode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\viewmodels\\lijstenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:viewmodels\\lijstenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\offerteafwerking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\offerteafwerking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\instelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\instelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\afwerkingenview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\afwerkingenview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\lijstenview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\lijstenview.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\leverancier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\leverancier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\afwerkingsoptie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\afwerkingsoptie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\typelijst.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\typelijst.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\lijstdialog.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\lijstdialog.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\lijstenview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\lijstenview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\lijstdialog.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\lijstdialog.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\lijst.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\lijst.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\converters\\booleanconverters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:converters\\booleanconverters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\appdbcontext.dgml||{295A0962-5A59-4F4F-9E12-6BC670C15C3B}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:appdbcontext.dgml||{295A0962-5A59-4F4F-9E12-6BC670C15C3B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\model\\afwerkingsgroep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:model\\afwerkingsgroep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\appservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:appservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anthony mohamed\\Downloads\\KlantenViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|c:\\users\\anthony mohamed\\documents\\werk\\shopapp\\views\\klantdialog.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3E5981BA-998D-59B6-F281-8AC48C13B0CE}|QuadroApp.csproj|solutionrelative:views\\klantdialog.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anthony mohamed\\Downloads\\KlantenViewModel.CRUD.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 382,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "QuadroTheme.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Styles\\QuadroTheme.axaml",
+              "RelativeDocumentMoniker": "Styles\\QuadroTheme.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Styles\\QuadroTheme.axaml",
+              "RelativeToolTip": "Styles\\QuadroTheme.axaml",
+              "ViewState": "AgIAACUAAAAAAAAAAIAwwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-09T16:41:12.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlanningCalendarViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\PlanningCalendarViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\PlanningCalendarViewModel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\PlanningCalendarViewModel.cs",
+              "RelativeToolTip": "ViewModels\\PlanningCalendarViewModel.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAgwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T23:51:54.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PlanningCalendarWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\PlanningCalendarWindow.axaml",
+              "RelativeDocumentMoniker": "Views\\PlanningCalendarWindow.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\PlanningCalendarWindow.axaml",
+              "RelativeToolTip": "Views\\PlanningCalendarWindow.axaml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-08T23:51:06.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlanningCalendarWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\PlanningCalendarWindow.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\PlanningCalendarWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\PlanningCalendarWindow.axaml.cs",
+              "RelativeToolTip": "Views\\PlanningCalendarWindow.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T23:51:06.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "QuadroApp.Views.OfferteView.g.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\AppData\\Local\\Temp\\.vsdbgsrc\\51c6b6835b98f43df297d5ad5b6ea6d7c64b592f\\QuadroApp.Views.OfferteView.g.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\51c6b6835b98f43df297d5ad5b6ea6d7c64b592f\\QuadroApp.Views.OfferteView.g.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\AppData\\Local\\Temp\\.vsdbgsrc\\51c6b6835b98f43df297d5ad5b6ea6d7c64b592f\\QuadroApp.Views.OfferteView.g.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\51c6b6835b98f43df297d5ad5b6ea6d7c64b592f\\QuadroApp.Views.OfferteView.g.cs [Read Only]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T23:29:18.247Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "OfferteRegel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\OfferteRegel.cs",
+              "RelativeDocumentMoniker": "Model\\OfferteRegel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\OfferteRegel.cs",
+              "RelativeToolTip": "Model\\OfferteRegel.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T19:05:04.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OfferteView.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\OfferteView.axaml",
+              "RelativeDocumentMoniker": "Views\\OfferteView.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\OfferteView.axaml*",
+              "RelativeToolTip": "Views\\OfferteView.axaml*",
+              "ViewState": "AgIAAPYAAAAAAAAAAAAowPwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-06T17:08:19.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OfferteView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\OfferteView.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\OfferteView.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\OfferteView.axaml.cs",
+              "RelativeToolTip": "Views\\OfferteView.axaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T17:08:18.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OfferteViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\OfferteViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\OfferteViewModel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\OfferteViewModel.cs",
+              "RelativeToolTip": "ViewModels\\OfferteViewModel.cs",
+              "ViewState": "AgIAAJIBAAAAAAAAAAAUwFYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T17:07:03.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LegacyAfwerkingCode.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Service\\LegacyAfwerkingCode.cs",
+              "RelativeDocumentMoniker": "Service\\LegacyAfwerkingCode.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Service\\LegacyAfwerkingCode.cs",
+              "RelativeToolTip": "Service\\LegacyAfwerkingCode.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA7wD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T14:14:53.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "AfwerkingenView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\AfwerkingenView.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\AfwerkingenView.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\AfwerkingenView.axaml.cs",
+              "RelativeToolTip": "Views\\AfwerkingenView.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T21:01:17.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AfwerkingenView.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\AfwerkingenView.axaml",
+              "RelativeDocumentMoniker": "Views\\AfwerkingenView.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\AfwerkingenView.axaml",
+              "RelativeToolTip": "Views\\AfwerkingenView.axaml",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAwwDQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-02T21:00:50.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AfwerkingenViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\AfwerkingenViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\AfwerkingenViewModel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\AfwerkingenViewModel.cs",
+              "RelativeToolTip": "ViewModels\\AfwerkingenViewModel.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAmwGgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T21:00:23.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "AppDbContext.dgml [Viewer]",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\AppDbContext.dgml",
+              "RelativeDocumentMoniker": "AppDbContext.dgml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\AppDbContext.dgml [Viewer]",
+              "RelativeToolTip": "AppDbContext.dgml [Viewer]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000968|",
+              "WhenOpened": "2025-10-20T09:43:19.937Z",
+              "EditorCaption": " [Viewer]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AppDbContext.sql",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\AppDbContext.sql",
+              "RelativeDocumentMoniker": "AppDbContext.sql",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\AppDbContext.sql",
+              "RelativeToolTip": "AppDbContext.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-10-20T09:28:36.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "App.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\App.axaml.cs",
+              "RelativeDocumentMoniker": "App.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\App.axaml.cs",
+              "RelativeToolTip": "App.axaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA9wBkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T14:37:41.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "KlantenViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Downloads\\KlantenViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\KlantenViewModel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Downloads\\KlantenViewModel.cs",
+              "RelativeToolTip": "..\\..\\..\\Downloads\\KlantenViewModel.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAAwN8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T13:59:31.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "LijstDialog.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\LijstDialog.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\LijstDialog.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\LijstDialog.axaml.cs",
+              "RelativeToolTip": "Views\\LijstDialog.axaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T15:58:56.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "LijstDialog.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\LijstDialog.axaml",
+              "RelativeDocumentMoniker": "Views\\LijstDialog.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\LijstDialog.axaml",
+              "RelativeToolTip": "Views\\LijstDialog.axaml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAtwJ4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-18T15:58:07.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "LijstenView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\LijstenView.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\LijstenView.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\LijstenView.axaml.cs",
+              "RelativeToolTip": "Views\\LijstenView.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T15:54:51.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "LijstenView.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\LijstenView.axaml",
+              "RelativeDocumentMoniker": "Views\\LijstenView.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\LijstenView.axaml",
+              "RelativeToolTip": "Views\\LijstenView.axaml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAYwCcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-18T15:54:32.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "App.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\App.axaml",
+              "RelativeDocumentMoniker": "App.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\App.axaml",
+              "RelativeToolTip": "App.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-18T15:52:03.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "OfferteAfwerking.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\OfferteAfwerking.cs",
+              "RelativeDocumentMoniker": "Model\\OfferteAfwerking.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\OfferteAfwerking.cs",
+              "RelativeToolTip": "Model\\OfferteAfwerking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T15:51:04.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "LijstenViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\LijstenViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LijstenViewModel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\LijstenViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LijstenViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T15:46:32.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T13:11:11.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Prijsbereking.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Service\\Prijsbereking.cs",
+              "RelativeDocumentMoniker": "Service\\Prijsbereking.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Service\\Prijsbereking.cs",
+              "RelativeToolTip": "Service\\Prijsbereking.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T13:06:52.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Offerte.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\Offerte.cs",
+              "RelativeDocumentMoniker": "Model\\Offerte.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\Offerte.cs",
+              "RelativeToolTip": "Model\\Offerte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:59:34.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Instelling.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\Instelling.cs",
+              "RelativeDocumentMoniker": "Model\\Instelling.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\Instelling.cs",
+              "RelativeToolTip": "Model\\Instelling.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:59:16.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "WerkBon.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\WerkBon.cs",
+              "RelativeDocumentMoniker": "Model\\WerkBon.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\WerkBon.cs",
+              "RelativeToolTip": "Model\\WerkBon.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:58:56.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "WerkTaak.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\WerkTaak.cs",
+              "RelativeDocumentMoniker": "Model\\WerkTaak.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\WerkTaak.cs",
+              "RelativeToolTip": "Model\\WerkTaak.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA+wB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:58:38.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Lijst.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\Lijst.cs",
+              "RelativeDocumentMoniker": "Model\\Lijst.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\Lijst.cs",
+              "RelativeToolTip": "Model\\Lijst.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:57:35.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "leverancier.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\leverancier.cs",
+              "RelativeDocumentMoniker": "Model\\leverancier.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\leverancier.cs",
+              "RelativeToolTip": "Model\\leverancier.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:55:46.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "AfwerkingsOptie.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\AfwerkingsOptie.cs",
+              "RelativeDocumentMoniker": "Model\\AfwerkingsOptie.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\AfwerkingsOptie.cs",
+              "RelativeToolTip": "Model\\AfwerkingsOptie.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAADwvxEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:38:52.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "AfwerkingsGroep.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\AfwerkingsGroep.cs",
+              "RelativeDocumentMoniker": "Model\\AfwerkingsGroep.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\AfwerkingsGroep.cs",
+              "RelativeToolTip": "Model\\AfwerkingsGroep.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:38:51.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "TypeLijst.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\TypeLijst.cs",
+              "RelativeDocumentMoniker": "Model\\TypeLijst.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\TypeLijst.cs",
+              "RelativeToolTip": "Model\\TypeLijst.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAA0wDUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:35:03.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "BooleanConverters.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Converters\\BooleanConverters.cs",
+              "RelativeDocumentMoniker": "Converters\\BooleanConverters.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Converters\\BooleanConverters.cs",
+              "RelativeToolTip": "Converters\\BooleanConverters.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T00:09:15.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "KlantDialog.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\KlantDialog.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\KlantDialog.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\KlantDialog.axaml.cs",
+              "RelativeToolTip": "Views\\KlantDialog.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:43:37.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "KlantDialog.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\KlantDialog.axaml",
+              "RelativeDocumentMoniker": "Views\\KlantDialog.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\KlantDialog.axaml",
+              "RelativeToolTip": "Views\\KlantDialog.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-16T13:42:20.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\HomeView.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\HomeView.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\HomeView.axaml.cs",
+              "RelativeToolTip": "Views\\HomeView.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:58:20.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\HomeViewModel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\HomeViewModel.cs",
+              "RelativeToolTip": "ViewModels\\HomeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:54:51.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeView.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\HomeView.axaml",
+              "RelativeDocumentMoniker": "Views\\HomeView.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\HomeView.axaml",
+              "RelativeToolTip": "Views\\HomeView.axaml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-16T12:50:52.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\MainWindowViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:48:04.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\MainWindow.axaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\MainWindow.axaml.cs",
+              "RelativeToolTip": "MainWindow.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:45:52.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "MainWindow.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\MainWindow.axaml",
+              "RelativeToolTip": "MainWindow.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-16T12:45:47.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "AppServices.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\AppServices.cs",
+              "RelativeDocumentMoniker": "AppServices.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\AppServices.cs",
+              "RelativeToolTip": "AppServices.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:42:55.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AppDbContext.cs.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Data\\AppDbContext.cs.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Data\\AppDbContext.cs.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAAAowMkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:40:34.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Klant.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\Klant.cs",
+              "RelativeDocumentMoniker": "Model\\Klant.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Model\\Klant.cs",
+              "RelativeToolTip": "Model\\Klant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:30:31.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "KlantenView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\KlantenView.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\KlantenView.axaml.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\KlantenView.axaml.cs",
+              "RelativeToolTip": "Views\\KlantenView.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:26:38.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "KlantenViewModel.CRUD.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Downloads\\KlantenViewModel.CRUD.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\KlantenViewModel.CRUD.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Downloads\\KlantenViewModel.CRUD.cs",
+              "RelativeToolTip": "..\\..\\..\\Downloads\\KlantenViewModel.CRUD.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAkwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:21:20.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KlantenView.axaml",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\KlantenView.axaml",
+              "RelativeDocumentMoniker": "Views\\KlantenView.axaml",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\Views\\KlantenView.axaml",
+              "RelativeToolTip": "Views\\KlantenView.axaml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-16T12:15:33.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "KlantenViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\KlantenViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\KlantenViewModel.cs",
+              "ToolTip": "C:\\Users\\anthony mohamed\\Documents\\werk\\ShopApp\\ViewModels\\KlantenViewModel.cs",
+              "RelativeToolTip": "ViewModels\\KlantenViewModel.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAAAFAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:12:22.016Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

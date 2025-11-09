@@ -1,0 +1,12 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:QuadroApp.ViewModels"
+    x:Class="QuadroApp.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    Width="1280" Height="800"
+    Title="Quadro App">
+
+	<!-- Eén dynamisch ContentControl die wisselt tussen views -->
+	<ContentControl Content="{Binding HuidigeView}" />
+</Window>

@@ -1,0 +1,409 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:QuadroApp.ViewModels"
+    xmlns:m="using:QuadroApp.Model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:design="clr-namespace:Avalonia.Markup.Xaml;assembly=Avalonia.Markup"
+    x:Class="QuadroApp.Views.LijstenView"
+    x:DataType="vm:LijstenViewModel"
+    d:DataContext="{d:DesignInstance vm:LijstenViewModel, IsDesignTimeCreatable=True}"
+    Background="#F5F5F5">
+	
+	<Grid ColumnDefinitions="2*,3*" RowDefinitions="Auto,*">
+		<!-- ░░ HEADER ░░ -->
+		<Border Grid.ColumnSpan="2"
+				Background="#444A50"
+				Height="70">
+			<DockPanel LastChildFill="False" Margin="20,0">
+
+				<!-- 🔹 Titel links -->
+				<StackPanel DockPanel.Dock="Left"
+							Orientation="Horizontal"
+							VerticalAlignment="Center"
+							Spacing="10">
+					<Ellipse Width="35" Height="35" Fill="#F5C242"/>
+					<TextBlock Text="QUADRO"
+							   Foreground="White"
+							   FontWeight="Bold"
+							   FontSize="20"
+							   VerticalAlignment="Center"/>
+					<TextBlock Text="LIJSTENBEHEER"
+							   Foreground="#CCC"
+							   FontSize="13"
+							   Margin="20,0,0,0"
+							   VerticalAlignment="Center"/>
+				</StackPanel>
+
+				<!-- 🔹 Terugknop rechtsboven -->
+				<Button Content="⬅️ Terug"
+						Command="{Binding GaTerugCommand}"
+						DockPanel.Dock="Right"
+						VerticalAlignment="Top"
+						HorizontalAlignment="Right"
+						Margin="0,10,10,0"
+						Background="#F5C242"
+						Foreground="#222"
+						FontWeight="Bold"
+						CornerRadius="8"
+						Padding="10,5"
+						Width="100"
+						Height="32"/>
+			</DockPanel>
+		</Border>
+
+
+		<!-- ░░ LINKERKANT – LIJSTENOVERZICHT ░░ -->
+		<StackPanel Grid.Row="1" Grid.Column="0" Margin="25,20,10,20" Spacing="15">
+			<!-- Titel -->
+			<TextBlock Text="📦 TypeLijsten" FontSize="22" FontWeight="Bold" Foreground="#222"/>
+
+			<!-- Zoekveld + toolbar -->
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<TextBox Width="200"
+						 Height="34"
+						 Watermark="Zoek lijst..."
+						 Text="{Binding Zoekterm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+				<Button Content="➕ Nieuw" Command="{Binding NewCommand}" Classes="MainBtn"/>
+				<Button Content="💾 Opslaan" Command="{Binding SaveCommand}" Classes="MainBtn"/>
+				<Button Content="🗑️ Verwijderen" Command="{Binding DeleteCommand}" Classes="MainBtn"/>
+				<Button Content="🔄 Ververs" Command="{Binding RefreshCommand}" Classes="MainBtn"/>
+			</StackPanel>
+
+			<!-- ░░ KOLOMTITELS ░░ -->
+			<Grid ColumnDefinitions="1.2*,1.5*,2.5*,1*" Margin="0,10,0,5">
+				<TextBlock Text="Artikelnummer"
+						   FontWeight="Bold"
+						   Grid.Column="0"
+						   Foreground="#333"
+						   HorizontalAlignment="Center"
+						   TextAlignment="Center"/>
+
+				<TextBlock Text="Leverancier"
+						   FontWeight="Bold"
+						   Grid.Column="1"
+						   Foreground="#333"
+						   HorizontalAlignment="Center"
+						   TextAlignment="Center"/>
+
+				<TextBlock Text="Beschrijving"
+						   FontWeight="Bold"
+						   Grid.Column="2"
+						   Foreground="#333"
+						   HorizontalAlignment="Center"
+						   TextAlignment="Center"/>
+
+				<TextBlock Text="Breedte (mm)"
+						   FontWeight="Bold"
+						   Grid.Column="3"
+						   Foreground="#333"
+						   HorizontalAlignment="Center"
+						   TextAlignment="Center"/>
+			</Grid>
+
+			<!-- ░░ LIJSTOVERZICHT ░░ -->
+			<Border BorderBrush="#DDD"
+					BorderThickness="1"
+					CornerRadius="8"
+					Background="White"
+					Padding="4">
+
+				<ListBox ItemsSource="{Binding FilteredLijsten}"
+						 SelectedItem="{Binding GeselecteerdeLijst, Mode=TwoWay}"
+						 BorderThickness="0"
+						 Background="Transparent"
+						 ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+					<!-- Stijlen -->
+					<ListBox.Styles>
+						<Style Selector="ListBoxItem">
+							<Setter Property="CornerRadius" Value="6"/>
+							<Setter Property="Margin" Value="0,0,0,5"/>
+							<Setter Property="Padding" Value="6,8"/>
+							<Setter Property="Background" Value="Transparent"/>
+						</Style>
+
+						<Style Selector="ListBoxItem:pointerover">
+							<Setter Property="Background" Value="#FFF8E1"/>
+						</Style>
+
+						<Style Selector="ListBoxItem:selected">
+							<Setter Property="Background" Value="#FFECB3"/>
+							<Setter Property="BorderBrush" Value="#F5C242"/>
+							<Setter Property="BorderThickness" Value="1"/>
+						</Style>
+					</ListBox.Styles>
+
+					<!-- Template -->
+					<ListBox.ItemTemplate>
+						<DataTemplate x:DataType="m:TypeLijst">
+							<Border Padding="6,4">
+								<Grid ColumnDefinitions="1.2*,1.5*,2.5*,1*" VerticalAlignment="Center">
+
+									<!-- Artikelnummer -->
+									<TextBlock Text="{Binding Artikelnummer}"
+											   Grid.Column="0"
+											   FontWeight="Bold"
+											   Foreground="#111"
+											   HorizontalAlignment="Center"
+											   TextAlignment="Center"/>
+
+									<!-- Leverancier -->
+									<StackPanel Grid.Column="1" HorizontalAlignment="Center">
+										<TextBlock Text="{Binding Leverancier.Naam}" Foreground="#333" TextAlignment="Center"/>
+										<TextBlock Text="{Binding Leverancier.Code}" Foreground="#888" FontSize="11" TextAlignment="Center"/>
+									</StackPanel>
+
+									<!-- Beschrijving -->
+									<TextBlock Text="{Binding Beschrijving}"
+											   Grid.Column="2"
+											   Foreground="#444"
+											   TextWrapping="NoWrap"
+											   TextAlignment="Center"
+											   HorizontalAlignment="Center"
+											   MaxWidth="220"/>
+
+									<!-- Breedte -->
+									<TextBlock Text="{Binding BreedteCm, StringFormat='{}{0} mm'}"
+											   Grid.Column="3"
+											   Foreground="#555"
+											   HorizontalAlignment="Center"
+											   TextAlignment="Center"/>
+								</Grid>
+							</Border>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Border>
+
+
+
+			<TextBlock Text="{Binding AantalLijsten, StringFormat='Aantal geladen lijsten: {0}'}"
+					   Foreground="#666"
+					   HorizontalAlignment="Center"
+					   Margin="0,10,0,0"/>
+		</StackPanel>
+
+
+		<!-- ░░ RECHTERKANT – DETAILS ░░ -->
+		<Border Grid.Row="1" Grid.Column="1"
+				BorderBrush="#E0E0E0"
+				BorderThickness="1"
+				CornerRadius="10"
+				Padding="30"
+				Background="#FFFFFF"
+				Margin="20,10,20,20"
+				Effect="drop-shadow(0 2 8 #00000020)">
+
+			<ScrollViewer VerticalScrollBarVisibility="Auto">
+				<StackPanel DataContext="{Binding GeselecteerdeLijst}" x:DataType="m:TypeLijst" Spacing="18">
+
+					<!-- Titel -->
+					<TextBlock Text="🧾 Lijstdetails"
+							   FontSize="22"
+							   FontWeight="Bold"
+							   Foreground="#222"
+							   Margin="0,0,0,10"/>
+
+					<!-- ░░ BASISINFORMATIE ░░ -->
+					<StackPanel>
+						<Border BorderBrush="#F5C242" BorderThickness="0 0 3 0" Margin="0,0,0,8">
+							<TextBlock Text="📘 Basisinformatie"
+									   FontSize="18"
+									   FontWeight="SemiBold"
+									   Foreground="#222"/>
+						</Border>
+
+						<Grid ColumnDefinitions="2*,3*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="7" ColumnSpacing="15">
+
+							<!-- Artikelnummer -->
+							<TextBlock Text="Artikelnummer" Grid.Row="0" Grid.Column="0" Foreground="#222" FontWeight="Bold"/>
+							<TextBox Text="{Binding Artikelnummer}" Grid.Row="0" Grid.Column="1"/>
+
+							<!-- Leverancier -->
+							<TextBlock Text="Leverancier" Grid.Row="1" Grid.Column="0" Foreground="#222" FontWeight="Bold"/>
+							<StackPanel Grid.Row="1" Grid.Column="1" Spacing="3">
+								<!-- ComboBox voor selectie -->
+								<ComboBox ItemsSource="{Binding AlleLeveranciers}"
+										  SelectedItem="{Binding Leverancier, Mode=TwoWay}"
+										  MinWidth="200"
+										  Height="30">
+									<ComboBox.ItemTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Code}" />
+										</DataTemplate>
+									</ComboBox.ItemTemplate>
+								</ComboBox>
+
+					
+							</StackPanel>
+
+							<!-- Soort -->
+							<TextBlock Text="Soort" Grid.Row="2" Grid.Column="0" Foreground="#222" FontWeight="Bold"/>
+							<TextBox Text="{Binding Soort}" Grid.Row="2" Grid.Column="1"/>
+
+							<!-- Beschrijving -->
+							<TextBlock Text="Beschrijving" Grid.Row="3" Grid.Column="0" Foreground="#222" FontWeight="Bold"/>
+							<TextBox Text="{Binding Beschrijving}" Grid.Row="3" Grid.Column="1"/>
+
+						</Grid>
+					</StackPanel>
+
+					<!-- ░░ PRIJSINFORMATIE ░░ -->
+					<StackPanel>
+						<Border BorderBrush="#F5C242" BorderThickness="0 0 3 0" Margin="0,15,0,8">
+							<TextBlock Text="💰 Prijsinformatie"
+									   FontSize="18"
+									   FontWeight="SemiBold"
+									   Foreground="#222"/>
+						</Border>
+
+						<Grid ColumnDefinitions="2*,3*"
+							  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+							  RowSpacing="7"
+							  ColumnSpacing="14">
+
+							<!-- ░░ Breedte ░░ -->
+							<TextBlock Text="Breedte (mm)"
+									   Grid.Row="0" Grid.Column="0"
+									   FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding BreedteCm}"
+									 Grid.Row="0" Grid.Column="1"/>
+
+							<!-- ░░ Prijs per meter ░░ -->
+							<TextBlock Text="Prijs per meter (€)"
+									   Grid.Row="1" Grid.Column="0"
+									   FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding PrijsPerMeter}"
+									 Grid.Row="1" Grid.Column="1"/>
+
+							<!-- ░░ Winstmarge ░░ -->
+							<TextBlock Text="Winstmarge factor"
+									   Grid.Row="2" Grid.Column="0"
+									   FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding WinstMargeFactor}"
+									 Grid.Row="2" Grid.Column="1"/>
+
+							<!-- ░░ Afval ░░ -->
+							<TextBlock Text="Afval (%)"
+									   Grid.Row="3" Grid.Column="0"
+									   FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding AfvalPercentage}"
+									 Grid.Row="3" Grid.Column="1"/>
+
+							<!-- ░░ Vaste kost ░░ -->
+							<TextBlock Text="Vaste kost (€)"
+									   Grid.Row="4" Grid.Column="0"
+									   FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding VasteKost}"
+									 Grid.Row="4" Grid.Column="1"/>
+
+							<!-- ░░ Werkminuten ░░ -->
+							<TextBlock Text="Werkminuten"
+									   Grid.Row="5" Grid.Column="0"
+									   FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding WerkMinuten}"
+									 Grid.Row="5" Grid.Column="1"/>
+						</Grid>
+
+					</StackPanel>
+
+					<!-- ░░ VOORRAADBEHEER ░░ -->
+					<StackPanel>
+						<Border BorderBrush="#F5C242" BorderThickness="0 0 3 0" Margin="0,15,0,8">
+							<TextBlock Text="📦 Voorraadbeheer"
+									   FontSize="18"
+									   FontWeight="SemiBold"
+									   Foreground="#222"/>
+						</Border>
+						<Grid ColumnDefinitions="2*,3*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="6" ColumnSpacing="14">
+							<TextBlock Text="Voorraad (m)" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding VoorraadMeter}" Grid.Row="0" Grid.Column="1"/>
+
+							<TextBlock Text="Minimum voorraad (m)" Grid.Row="1" Grid.Column="0" FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding MinimumVoorraad}" Grid.Row="1" Grid.Column="1"/>
+
+							<TextBlock Text="Inventariskost (€)" Grid.Row="2" Grid.Column="0" FontWeight="Bold" Foreground="#222"/>
+							<TextBox Text="{Binding InventarisKost}" Grid.Row="2" Grid.Column="1"/>
+
+							<TextBlock Text="Laatste update" Grid.Row="3" Grid.Column="0" FontWeight="Bold" Foreground="#222"/>
+							<TextBlock Text="{Binding LaatsteUpdate, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}"
+									   Grid.Row="3"
+									   Grid.Column="1"
+									   Foreground="#333"
+									   VerticalAlignment="Center"
+									   FontStyle="Italic"/>
+						</Grid>
+
+					</StackPanel>
+
+
+					<!-- ░░ PRIJSBEREKENING ░░ -->
+					<Border BorderBrush="#F5C242" BorderThickness="0 0 3 0" Margin="0,15,0,8">
+						<TextBlock Text="📈 Prijsberekening"
+								   FontSize="18"
+								   FontWeight="SemiBold"
+								   Foreground="#222"/>
+					</Border>
+
+					<!-- Add a row for Werkloon (€) in the price calculation grid -->
+					<Grid ColumnDefinitions="2*,3*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="8" ColumnSpacing="14">
+						<TextBlock Text="Breedte (cm)" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Foreground="#222"/>
+						<NumericUpDown Value="{Binding $parent[UserControl].DataContext.Breedte, Mode=TwoWay}"
+									   Grid.Row="0" Grid.Column="1" Minimum="1" Maximum="500" Increment="1"/>
+
+						<TextBlock Text="Hoogte (cm)" Grid.Row="1" Grid.Column="0" FontWeight="Bold" Foreground="#222"/>
+						<NumericUpDown Value="{Binding $parent[UserControl].DataContext.Hoogte, Mode=TwoWay}"
+									   Grid.Row="1" Grid.Column="1" Minimum="1" Maximum="500" Increment="1"/>
+
+						<!-- Werkloon row -->
+						<TextBlock Text="Werkloon (€)" Grid.Row="2" Grid.Column="0" FontWeight="Bold" Foreground="#222"/>
+						<TextBox Text="{Binding $parent[UserControl].DataContext.Werkloon, Mode=TwoWay}" Grid.Row="2" Grid.Column="1"/>
+
+						<TextBlock Text="💰 Geschatte verkoopprijs" Grid.Row="3" Grid.Column="0" FontWeight="Bold" Foreground="#222"/>
+						<TextBlock Text="{Binding $parent[UserControl].DataContext.VerkoopPrijsPreview}"
+								   Grid.Row="3"
+								   Grid.Column="1"
+								   FontWeight="Bold"
+								   FontSize="16"
+								   Foreground="#222"/>
+					</Grid>
+
+
+					<!-- ░░ OPSLAAN ░░ -->
+					<Button Content="💾 Opslaan wijzigingen"
+							Command="{Binding $parent[UserControl].DataContext.SaveCommand}"
+							Background="#444A50"
+							Foreground="White"
+							CornerRadius="8"
+							Padding="10,6"
+							FontWeight="Bold"
+							Width="220"
+							HorizontalAlignment="Right"
+							Margin="0,10,0,0"/>
+				</StackPanel>
+			</ScrollViewer>
+		</Border>
+
+
+	</Grid>
+
+	<!-- ░░ STIJLEN ░░ -->
+	<UserControl.Styles>
+		<Style Selector="Button.MainBtn">
+			<Setter Property="Background" Value="#444A50"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="CornerRadius" Value="8"/>
+			<Setter Property="BorderBrush" Value="Transparent"/>
+			<Setter Property="FontSize" Value="15"/>
+			<Setter Property="Padding" Value="10,5"/>
+		</Style>
+
+		<Style Selector="Button.MainBtn:pointerover">
+			<Setter Property="Background" Value="#F5C242"/>
+			<Setter Property="Foreground" Value="#222"/>
+		</Style>
+	</UserControl.Styles>
+</UserControl>
