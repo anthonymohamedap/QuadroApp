@@ -27,6 +27,7 @@ namespace QuadroApp.ViewModels
         [ObservableProperty] private ObservableCollection<AfwerkingsOptie> opties = new();
         [ObservableProperty] private ObservableCollection<AfwerkingsOptie> filteredOpties = new();
 
+        private bool isSynchronizing;
         private AfwerkingsOptie? selectedOptie;
         public AfwerkingsOptie? SelectedOptie
         {
@@ -38,6 +39,7 @@ namespace QuadroApp.ViewModels
                     DeleteAsyncCommand.NotifyCanExecuteChanged();
                     SyncSelectedOptieBindings();
                     OnPropertyChanged(nameof(PreviewPrijsText));
+                    OnPropertyChanged(nameof(HeeftSelectie));
                 }
             }
         }
@@ -55,7 +57,8 @@ namespace QuadroApp.ViewModels
         public string AantalOptiesText => $"{FilteredOpties.Count} opties";
 
         [ObservableProperty] private bool isDealerOptie;
-        [ObservableProperty] private string? serieOpmerking;
+
+        public bool HeeftSelectie => SelectedOptie is not null;
 
         // ─────────────────────────────────────────────────────────────
         // Commands
@@ -87,15 +90,6 @@ namespace QuadroApp.ViewModels
             DeleteAsyncCommand = new AsyncRelayCommand(DeleteAsync, CanDelete);
 
             _ = LoadAsync();
-
-            PropertyChanged += (_, e) =>
-            {
-                if (e.PropertyName == nameof(SelectedGroep) || e.PropertyName == nameof(Zoekterm))
-                    ApplyFilter();
-
-                if (e.PropertyName == nameof(PreviewBreedteCm) || e.PropertyName == nameof(PreviewHoogteCm))
-                    OnPropertyChanged(nameof(PreviewPrijsText));
-            };
         }
 
         [RelayCommand]
@@ -111,6 +105,7 @@ namespace QuadroApp.ViewModels
         {
             try
             {
+                Foutmelding = null;
                 Status = "Laden…";
 
                 using (var db = _factory.CreateDbContext())
@@ -140,57 +135,77 @@ namespace QuadroApp.ViewModels
 
         private async Task LoadOptiesAsync()
         {
-            using var db = _factory.CreateDbContext();
+            try
+            {
+                using var db = _factory.CreateDbContext();
 
-            var q = db.AfwerkingsOpties.AsNoTracking();
+                var query = db.AfwerkingsOpties
+                    .AsNoTracking()
+                    .Include(o => o.Leverancier)
+                    .Include(o => o.AfwerkingsGroep);
 
-            if (SelectedGroep != null)
-                q = q.Where(o => o.AfwerkingsGroepId == SelectedGroep.Id);
+                if (SelectedGroep != null)
+                    query = query.Where(o => o.AfwerkingsGroepId == SelectedGroep.Id);
 
-            var list = await q.OrderBy(o => o.Volgnummer)
-                              .ThenBy(o => o.Naam)
-                              .ToListAsync();
-            Console.WriteLine($"[DB] {list.Count} afwerkingsopties geladen.");
+                var opties = await query
+                    .OrderBy(o => o.Volgnummer)
+                    .ThenBy(o => o.Naam)
+                    .ToListAsync();
 
-            Opties = new ObservableCollection<AfwerkingsOptie>(list);
-            ApplyFilter();
+                Opties = new ObservableCollection<AfwerkingsOptie>(opties);
+                ApplyFilter();
+            }
+            catch (Exception ex)
+            {
+                Foutmelding = $"Fout bij laden van opties: {ex.Message}";
+            }
         }
 
         private void ApplyFilter()
         {
+            var vorigeSelectieId = SelectedOptie?.Id;
+
             var src = Opties.AsEnumerable();
             if (!string.IsNullOrWhiteSpace(Zoekterm))
             {
                 var t = Zoekterm.Trim().ToLowerInvariant();
                 src = src.Where(o =>
-                    ((o.Volgnummer).ToString() ?? "").ToLowerInvariant().Contains(t) ||
-                    (o.Naam ?? "").ToLowerInvariant().Contains(t));
+                    o.Volgnummer.ToString().Contains(t, StringComparison.OrdinalIgnoreCase) ||
+                    (o.Naam ?? string.Empty).Contains(t, StringComparison.OrdinalIgnoreCase));
             }
             FilteredOpties = new ObservableCollection<AfwerkingsOptie>(src);
             OnPropertyChanged(nameof(AantalOptiesText));
+
+            var nieuweSelectie = vorigeSelectieId.HasValue
+                ? FilteredOpties.FirstOrDefault(x => x.Id == vorigeSelectieId.Value)
+                : FilteredOpties.FirstOrDefault();
+
+            SelectedOptie = nieuweSelectie;
         }
         private void SyncSelectedOptieBindings()
         {
-            if (selectedOptie is null)
+            isSynchronizing = true;
+            try
             {
-                SelectedLeverancier = null;
-                SerieOpmerking = null;
-                IsDealerOptie = false;
-                return;
+                if (selectedOptie is null)
+                {
+                    SelectedLeverancier = null;
+                    IsDealerOptie = false;
+                    return;
+                }
+
+                // Controleer of dit een dealeroptie is (DLR)
+                IsDealerOptie = string.Equals(selectedOptie.Leverancier?.Code, "DLR", StringComparison.OrdinalIgnoreCase);
+
+                // Stel de geselecteerde leverancier in
+                SelectedLeverancier = selectedOptie.LeverancierId.HasValue
+                    ? Leveranciers.FirstOrDefault(l => l.Id == selectedOptie.LeverancierId.Value)
+                    : null;
             }
-
-            // Controleer of dit een dealeroptie is (DLR)
-            IsDealerOptie = string.Equals(selectedOptie.Leverancier?.Code, "DLR", StringComparison.OrdinalIgnoreCase);
-
-            // Toon volgnummer als serie/opmerking
-            SerieOpmerking = selectedOptie.Volgnummer > 0
-                ? selectedOptie.Volgnummer.ToString()
-                : null;
-
-            // Stel de geselecteerde leverancier in
-            SelectedLeverancier = selectedOptie.LeverancierId.HasValue
-                ? Leveranciers.FirstOrDefault(l => l.Id == selectedOptie.LeverancierId.Value)
-                : null;
+            finally
+            {
+                isSynchronizing = false;
+            }
         }
 
 
@@ -224,6 +239,10 @@ namespace QuadroApp.ViewModels
                 {
                     using var db = _factory.CreateDbContext();
                     selectedOptie.LeverancierId = SelectedLeverancier?.Id;
+                    if (SelectedLeverancier is not null)
+                    {
+                        selectedOptie.Leverancier = SelectedLeverancier;
+                    }
                     db.Update(selectedOptie);
                     await db.SaveChangesAsync();
                 }
@@ -243,14 +262,22 @@ namespace QuadroApp.ViewModels
 
             using var db = _factory.CreateDbContext();
 
+            var volgendNummer = await db.AfwerkingsOpties
+                .Where(o => o.AfwerkingsGroepId == SelectedGroep.Id)
+                .Select(o => o.Volgnummer)
+                .DefaultIfEmpty(0)
+                .MaxAsync() + 1;
+
             var nieuw = new AfwerkingsOptie
             {
                 AfwerkingsGroepId = SelectedGroep.Id,
                 Naam = "Nieuwe optie",
+                Volgnummer = volgendNummer,
                 WinstMarge = 0.25m,
                 AfvalPercentage = 0m,
                 KostprijsPerM2 = 0m,
-                VasteKost = 0m
+                VasteKost = 0m,
+                WerkMinuten = 0
             };
 
             db.AfwerkingsOpties.Add(nieuw);
@@ -272,7 +299,25 @@ namespace QuadroApp.ViewModels
             await db.SaveChangesAsync();
 
             await LoadOptiesAsync();
-            SelectedOptie = null;
+            HasChanges = true;
+        }
+
+        partial void OnZoektermChanged(string? value) => ApplyFilter();
+
+        partial void OnSelectedGroepChanged(AfwerkingsGroep? value)
+        {
+            _ = LoadOptiesAsync();
+        }
+
+        partial void OnPreviewBreedteCmChanged(decimal value) => OnPropertyChanged(nameof(PreviewPrijsText));
+
+        partial void OnPreviewHoogteCmChanged(decimal value) => OnPropertyChanged(nameof(PreviewPrijsText));
+
+        partial void OnSelectedLeverancierChanged(Leverancier? value)
+        {
+            if (selectedOptie is null || isSynchronizing) return;
+            selectedOptie.LeverancierId = value?.Id;
+            selectedOptie.Leverancier = value;
             HasChanges = true;
         }
     }

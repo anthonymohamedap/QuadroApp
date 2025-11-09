@@ -14,7 +14,7 @@ namespace QuadroApp.Model
         [Required, MaxLength(50)]
         public string Naam { get; set; } = string.Empty;
 
-        [Range(1, 20)]
+        [Range(1, 9999)]
         public int Volgnummer { get; set; }
 
         [Precision(10, 2)]
@@ -29,6 +29,7 @@ namespace QuadroApp.Model
         [Precision(10, 2)]
         public decimal VasteKost { get; set; }
 
+        [Range(0, 1440)]
         public int WerkMinuten { get; set; }
 
         public int? LeverancierId { get; set; }
